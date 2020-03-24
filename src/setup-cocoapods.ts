@@ -3,10 +3,6 @@ import { CocoapodsInstaller } from "./installer";
 
 const run = async (): Promise<void> => {
     try {
-        if (process.platform !== "darwin") {
-            throw new Error(`This task is intended only for macOS platform. It can't be run on '${process.platform}' platform`);
-        }
-
         let versionSpec = core.getInput("version", { required: false });
         const podfilePath = core.getInput("podfile-path", { required: false });
 
